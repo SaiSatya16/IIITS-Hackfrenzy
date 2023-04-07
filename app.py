@@ -35,13 +35,23 @@ def predict():
 
 @app.route('/foreign_crop',methods=['GET','POST'])
 def foreign_crop():
-    return render_template('foreign.html',data=[{'name':'HopShoots'}, {'name':'Cassava'}, {'name':'Buckwheat'}])
+    return render_template('foreign.html',data=[{'name':'Hop Shoots'}, {'name':'Cassava'}, {'name':'Buckwheat'},{'name':'Forage Sorghum'},{'name':'Brussel Sprouts'}])
 
 @app.route("/test" , methods=['GET', 'POST'])
 def test():
     select = request.form.get('comp_select')
-    if select == 'HopShoots':
+    if select == 'Hop Shoots':
         return render_template('HopShoots.html')
+    elif select == 'Cassava':
+        return render_template('Cassava.html')
+    elif select == 'Buckwheat':
+        return render_template('Buckwheat.html')
+    elif select == 'Forage Sorghum':
+        return render_template('ForageSorghum.html')
+    elif select == 'Brussel Sprouts':
+        return render_template('BrusselSprouts.html')
+    
+    
 
 @app.route('/price',methods=['GET','POST'])
 def price_prediction():
