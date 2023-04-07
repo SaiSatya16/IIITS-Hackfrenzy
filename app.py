@@ -17,8 +17,12 @@ app.config['SQLALCHEMY_DATABASE_URI']="sqlite:///agriculturedata.sqlite3"
 def index_page():
     return render_template('index.html')
 
-@app.route('/crop_rec',methods=['GET','POST'])
-def crop_recommendation():
+@app.route('/recommendation')
+def rec_page():
+    return render_template('recommendation.html')
+
+@app.route('/predict',methods=['GET','POST'])
+def predict():
     if request.method == 'POST':
         f = [float(x) for x in request.form.values()]
         data = [np.array(f)]
@@ -26,7 +30,7 @@ def crop_recommendation():
         final_prediction = my_prediction[0]
         final_prediction = label_dict[final_prediction]
 
-        return render_template('recommendation.html', prediction_text=final_prediction,)
+        return render_template('recommendation.html', prediction_text=final_prediction)
 
 
 @app.route('/foreign_crop',methods=['GET','POST'])
