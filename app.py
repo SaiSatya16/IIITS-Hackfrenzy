@@ -3,7 +3,7 @@ from model import *
 import numpy as np
 import pandas as pd
 import pickle
-from ml_model import *
+from ml_model_croprecom import *
 crop_recommendation_model_path = 'knn_pipeline.pkl'
 crop_recommendation_model = pickle.load(
     open(crop_recommendation_model_path, 'rb'))
