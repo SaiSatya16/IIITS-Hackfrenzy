@@ -4,9 +4,16 @@ import numpy as np
 import pandas as pd
 import pickle
 from ml_model_croprecom import *
+from ml_model_fertilizerrecom import *
 crop_recommendation_model_path = 'knn_pipeline.pkl'
 crop_recommendation_model = pickle.load(
     open(crop_recommendation_model_path, 'rb'))
+
+fertilizer_recommendation_model_path = 'rf_pipeline.pkl'
+fertilizer_recommendation_model = pickle.load(
+    open(fertilizer_recommendation_model_path, 'rb'))
+
+
 #creating the app
 app=Flask(__name__)
 
@@ -20,6 +27,22 @@ def index_page():
 @app.route('/recommendation')
 def rec_page():
     return render_template('recommendation.html')
+
+@app.route('/fertilizer_rec')
+def ferrec_page():
+    return render_template('fertilizer_rec.html')
+
+@app.route('/fert_rec',methods=['GET','POST'])
+def fert_rec():
+    if request.method == 'POST':
+        f = [float(x) for x in request.form.values()]
+        data1 = [np.array(f)]
+        print(data1)
+        my_prediction1 = fertilizer_recommendation_model.predict(data1)
+        final_prediction = my_prediction1[0]
+        final_prediction = fertname_dict[final_prediction]
+
+        return render_template('fertilizer_rec.html', prediction_text=final_prediction)
 
 @app.route('/predict',methods=['GET','POST'])
 def predict():
