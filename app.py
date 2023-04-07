@@ -36,7 +36,7 @@ def predict():
 
 @app.route('/foreign_crop',methods=['GET','POST'])
 def foreign_crop():
-    return render_template('foreign.html',data=[{'name':'Hop Shoots'}, {'name':'Cassava'}, {'name':'Buckwheat'},{'name':'Forage Sorghum'},{'name':'Brussel Sprouts'}])
+    return render_template('foreign.html',data=[{'name':'Hop Shoots'}, {'name':'Cassava'}, {'name':'Buckwheat'},{'name':'Forage Sorghum'},{'name':'Brussel Sprouts'},{'name':'Camachile'},{'name':'Mangosteen'},{'name':'Avocado'},{'name':'Persimmon'},{'name':'Karonda'}])
 
 @app.route("/test" , methods=['GET', 'POST'])
 def test():
@@ -51,6 +51,17 @@ def test():
         return render_template('ForageSorghum.html')
     elif select == 'Brussel Sprouts':
         return render_template('BrusselSprouts.html')
+    elif select == 'Camachile':
+        return render_template('Camachile.html')
+    elif select == 'Mangosteen':
+        return render_template('Mangosteen.html')
+    elif select == 'Avocado':
+        return render_template('Avocado.html')
+    elif select == 'Persimmon':
+        return render_template('Persimmon.html')
+    else:
+        return render_template('Karonda.html')
+    
     
     
 
