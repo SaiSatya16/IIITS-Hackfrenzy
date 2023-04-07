@@ -35,7 +35,7 @@ def predict():
 
 @app.route('/foreign_crop',methods=['GET','POST'])
 def foreign_crop():
-    return render_template('foreign.html',data=[{'name':'HopShoots'}, {'name':'green'}, {'name':'blue'}])
+    return render_template('foreign.html',data=[{'name':'HopShoots'}, {'name':'Cassava'}, {'name':'Buckwheat'}])
 
 @app.route("/test" , methods=['GET', 'POST'])
 def test():
