@@ -1,5 +1,22 @@
-.main-container{
-  background-color: black;
+.main-container {
+  background-image: url("bgimg1.jpg");
   height: 100vh;
-  width: auto;
+  background-size: cover;
+}
+body {
+  margin: 0px;
+}
+.nav-link {
+  font-weight: bold;
+}
+.button-sty {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: chartreuse;
+  height: 40px;
+  border-radius: 20px;
+  color: white;
+}
+
+.button-sty :hover {
+  background-color: chartreuse;
 }
