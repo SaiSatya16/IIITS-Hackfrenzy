@@ -35,7 +35,13 @@ def predict():
 
 @app.route('/foreign_crop',methods=['GET','POST'])
 def foreign_crop():
-    return render_template('foreign.html')
+    return render_template('foreign.html',data=[{'name':'HopShoots'}, {'name':'green'}, {'name':'blue'}])
+
+@app.route("/test" , methods=['GET', 'POST'])
+def test():
+    select = request.form.get('comp_select')
+    if select == 'HopShoots':
+        return render_template('HopShoots.html')
 
 @app.route('/price',methods=['GET','POST'])
 def price_prediction():
