@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
 .main-container {
   background-image: url("bgimg1.jpg");
   height: 100vh;
@@ -9,7 +10,7 @@ body {
 .nav-link {
   font-weight: bold;
 }
-.button-sty{
+.button-sty {
   border-style: solid;
   padding: 30px;
   width: 250px;
@@ -18,9 +19,8 @@ body {
 }
 .button-sty:link {
   border-color: greenyellow;
-  
 }
-.button-sty:visited{
+.button-sty:visited {
   color: #fff;
 }
 
@@ -28,10 +28,55 @@ body {
   background-color: transparent;
 }
 
-.button-sty :active{
+.button-sty :active {
   border-color: black;
 }
-.about-us-section-container{
-  background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+.about-us-section-container {
+  background: linear-gradient(
+    125deg,
+    #ecfcff 0%,
+    #ecfcff 40%,
+    #b2fcff calc(40% + 1px),
+    #b2fcff 60%,
+    #5edfff calc(60% + 1px),
+    #5edfff 72%,
+    #3e64ff calc(72% + 1px),
+    #3e64ff 100%
+  );
   height: 100%;
+}
+.about-content {
+  color: #7b8794;
+  font-weight: bold;
+  font-family: "Roboto";
+}
+.card {
+  border-radius: 30px;
+}
+
+.follow-us-section {
+  background-image: radial-gradient(#fff8db, rgb(206, 251, 138));
+  height: 100%;
+}
+.follow-us-section-heading {
+  text-align: center;
+  color: #183b56;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.follow-us-icon-container {
+  background-color: #24eb0a;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin: 15px;
+  padding-top: 22px;
+  padding-bottom: 14px;
+  padding-right: 16px;
+  padding-left: 22px;
+}
+.icon {
+  color: #111;
+  font-size: 35px;
 }
