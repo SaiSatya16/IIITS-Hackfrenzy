@@ -26,6 +26,7 @@ def predict():
     if request.method == 'POST':
         f = [float(x) for x in request.form.values()]
         data = [np.array(f)]
+        print(data)
         my_prediction = crop_recommendation_model.predict(data)
         final_prediction = my_prediction[0]
         final_prediction = label_dict[final_prediction]
