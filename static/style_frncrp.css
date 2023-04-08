@@ -154,3 +154,8 @@ nav ul li a:hover::after {
   border-radius: 20px;
   width: 100%;
 }
+
+.from-control {
+  height: 40px;
+  width: 100%;
+}

@@ -36,19 +36,35 @@
   </head>
 
   <body>
-    <div class="login p-3">
+    <header>
+    <nav>
+      <h2 class="logo">Agriculture Reforms</h2>
+      <div class="header d-flex flex-row justify-content-center" id="home">
+      <div class="d-flex flex-row justify-content-end">
+      <ul class="ml-auto">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    </div>
+    </nav>
+  </header>
+    <div class="login p-5">
       <!-- Main Input For Receiving Query to our ML -->
 
       <div class="row">
-        <div class="col-12 col-md-6">
-          <h1>Crop Recommondation</h1>
-          <p class="crop-prediction-para">
+        <div class="col-12 col-md-6 p-4">
+          <h1 class="rec-head">Crop Recommendations:</h1>
+          <p class="crop-prediction-para mb-5">
             The precise recommendation of crops is a pivotal constituent of
             Precision Agriculture, and can be accomplished by means of a
             sophisticated machine learning-based approach. In the realm of
             agriculture, it is of paramount importance that the recommendations
             provided are characterized by a high degree of accuracy and
-            precision. This is due to the fact that any erroneous
+            precision.
+          </p>
+            <p class="crop-prediction-para mb-5"> This is due to the fact that any erroneous
             recommendations can lead to substantial material and capital losses,
             which can severely impact the economic viability of agricultural
             endeavors.This recommendation will help the farmers in India to make
@@ -56,71 +72,92 @@
             recommendations to farmers to determine the appropriate crop which
             can be used to increase crop yield.
           </p>
+          <h1 class="rec-head">How does it work?</h1>
           <p class="crop-prediction-para">
-            How does it work The system employs a K-Nearest Neighbors (KNN)
+             The system employs a K-Nearest Neighbors (KNN)
             supervised learning model, which methodically analyzes a diverse
             range of data inputs, such as soil type, weather patterns, pH level,
             and additional environmental factors. Ultimately, this systematic
             and automated process yields a set of personalized recommendations
             that identify the most optimal crops to cultivate in a given area.
           </p>
+          <p class="crop-prediction-para text-info text-left"  >If you don't know the details of parameters,click below Link:</p>
+          <a class="info-sty bg-info" href="https://farmer.gov.in/STL.aspx">Farmer's Portal</a>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 p-4">
           <form action="{{ url_for('predict')}}" method="post">
-            <div class="inp-sty">
-              <input type="text" name="N" placeholder="N" required="required" />
-            </div>
-            <div class="inp-sty">
-              <input type="text" name="P" placeholder="P" required="required" />
-            </div>
-            <div class="inp-sty">
-              <input type="text" name="K" placeholder="K" required="required" />
-            </div>
-            <div class="inp-sty">
+            <div class="inp-sty mb-3">
+              <label for="nitro" class="label-sty">Enter Nitrogen(N) Percentage</label>
               <input
-                type="text"
+                id="nitro"
+                type="number"
+                name="N"
+                placeholder="N"
+                required="required"
+              />
+            </div>
+            <div class="inp-sty mb-3">
+              <label for="phos" class="label-sty">Enter Phosporous(P) Percentage</label>
+              <input id="phos" type="number" name="P" placeholder="P" required="required" />
+            </div>
+            <div class="inp-sty  mb-3">
+              <label for="potas" class="label-sty">Enter Potassium(K) Percentage</label>
+              <input id="potas" type="number" name="K" placeholder="K" required="required" />
+            </div>
+            <div class="inp-sty  mb-3">
+              <label for="temp" class="label-sty">Enter Temperature (°C)</label>
+              <input
+              id="temp"
+                type="number"
                 name="Temperature"
                 placeholder="temp"
                 required="required"
               />
             </div>
-            <div class="inp-sty">
+            <div class="inp-sty  mb-3">
+              <label for="humi" class="label-sty">Enter Humidity</label>
               <input
-                type="text"
+              id="humi"
+                type="number"
                 name="humidity"
                 placeholder="humidity"
                 required="required"
               />
             </div>
-            <div class="inp-sty">
+            <div class="inp-sty  mb-3">
+              <label for="ph" class="label-sty">Enter pH of Soil</label>
               <input
-                type="text"
+              id="ph"
+                type="number"
                 name="ph"
                 placeholder="ph"
                 required="required"
               />
             </div>
-            <div class="inp-sty">
+            <div class="inp-sty  mb-3">
+              <label for="rainfall" class="label-sty">Enter Rainfall(mm)</label>
               <input
-                type="text"
+                type="number"
+                id="rainfall"
                 name="rainfall"
                 placeholder="rainfall"
                 required="required"
               />
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary">Predict</button>
+              <button type="submit" class="button-predict">Predict</button>
             </div>
           </form>
         </div>
       </div>
 
-      <p>If you don't know the details of parameters,click here:</p>
-      <a href="https://farmer.gov.in/STL.aspx">Farmer's Portal</a>
-
-      <br />
-      <br />
-      {{ prediction_text }}
+      
+      
+      <div class="card d-flex flex-row justify-content-center shadow p-3">
+      
+      <p class="result-text text-center">Crop Suitable to given Data: <strong>{{ prediction_text }}</strong></p>
+    </div>
+    </div>
     </div>
   </body>
 </html>
