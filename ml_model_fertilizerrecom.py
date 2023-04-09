@@ -22,7 +22,7 @@ import pickle
 import warnings
 warnings.filterwarnings("ignore")
 
-data = pd.read_csv("Fertilizer Prediction.csv")
+data = pd.read_csv("Fertilizer_Prediction.csv")
 #print(data.head())
 soil_type_label_encoder = LabelEncoder()
 data["Soil Type"] = soil_type_label_encoder.fit_transform(data["Soil Type"])
